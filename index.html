@@ -1,455 +1,758 @@
-# Full Updated Website Content
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Hermiz | Cybersecurity & IT Support</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Hermiz — Cybersecurity &amp; IT Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Long Document · tone: technical · anchor hue: amber
+ * Pre-emit critique: P5 H5 E5 S4 R5 V5
+ * Nav: minimal top bar · Footer: Ft4 dense typographic
+ */
+
+:root {
+  --color-paper:    oklch(14% 0.008 60);
+  --color-paper-2:  oklch(18% 0.010 60);
+  --color-paper-3:  oklch(23% 0.010 58);
+  --color-rule:     oklch(28% 0.010 60);
+  --color-muted:    oklch(52% 0.008 70);
+  --color-neutral:  oklch(70% 0.007 75);
+  --color-ink:      oklch(93% 0.007 75);
+  --color-accent:   oklch(72% 0.16 75);
+  --color-focus:    oklch(72% 0.16 75);
+
+  --font-display:   "JetBrains Mono", ui-monospace, monospace;
+  --font-body:      "Geist", ui-sans-serif, system-ui, sans-serif;
+
+  --text-xs:        0.64rem;
+  --text-sm:        0.8rem;
+  --text-base:      1rem;
+  --text-md:        1.25rem;
+  --text-lg:        1.5625rem;
+  --text-xl:        1.9531rem;
+  --text-2xl:       2.4414rem;
+  --text-display:   clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-display-s: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --dur-short:   100ms;
+  --dur-mid:     200ms;
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+
+  --z-sticky: 200;
+}
+
+html, body { overflow-x: clip; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-weight: 350;
+}
+
+/* ─── Navigation ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-sticky);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-2xl);
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--space-xl);
+}
+
+.nav-links a {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--dur-short) var(--ease-out);
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--color-ink); }
+.nav-links a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+
+/* ─── Document ─── */
+.document {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: calc(var(--space-4xl) + var(--space-xl)) var(--space-2xl) var(--space-4xl);
+}
+
+/* Doc header */
+.doc-header { margin-bottom: var(--space-3xl); }
+
+.doc-role {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.doc-name {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+  margin-bottom: var(--space-xl);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg) var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-rule);
+}
+
+.doc-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+
+.meta-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.meta-value {
+  font-size: var(--text-sm);
+  color: var(--color-neutral);
+}
+
+.meta-value a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--dur-short) var(--ease-out);
+}
+.meta-value a:hover { color: var(--color-ink); }
+.meta-value a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+/* Sections */
+.doc-section { margin-bottom: var(--space-3xl); }
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.section-fill {
+  flex: 1;
+  height: 1px;
+  background: var(--color-rule);
+}
+
+/* Summary */
+.summary-body {
+  font-size: var(--text-md);
+  line-height: 1.75;
+  color: var(--color-neutral);
+  max-width: 68ch;
+}
+.summary-body strong { color: var(--color-ink); font-weight: 500; }
+
+/* Experience */
+.exp-list { display: flex; flex-direction: column; gap: var(--space-2xl); }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-xl);
+}
+
+.exp-meta { padding-top: 0.15em; }
+
+.exp-company {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.exp-period {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.exp-role {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+}
+
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); }
+
+.exp-bullets li {
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-neutral);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+.exp-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-rule);
+}
+
+/* Skills — tabular */
+.skills-table { width: 100%; border-collapse: collapse; }
+
+.skills-table tr { border-bottom: 1px solid var(--color-rule); }
+.skills-table tr:last-child { border-bottom: none; }
+
+.skill-cat {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  padding: var(--space-md) var(--space-md) var(--space-md) 0;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 200px;
+}
+
+.skill-items {
+  padding: var(--space-md) 0;
+  font-size: var(--text-sm);
+  color: var(--color-neutral);
+  line-height: 1.9;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Projects */
+.projects-list { display: flex; flex-direction: column; gap: var(--space-2xl); }
+
+.project-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-lg);
+}
+
+.project-num {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-rule);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.3em;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.project-body {
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-neutral);
+  max-width: 64ch;
+  margin-bottom: var(--space-sm);
+}
+
+.project-tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+.project-tag {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  border: 1px solid var(--color-rule);
+  padding: var(--space-3xs) var(--space-xs);
+}
+
+/* Certs + Education */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+}
+
+.cert-list { display: flex; flex-direction: column; gap: var(--space-lg); }
+
+.cert-item { display: flex; flex-direction: column; gap: var(--space-3xs); }
+
+.cert-year {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.cert-name {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.cert-desc { font-size: var(--text-sm); color: var(--color-muted); }
+
+.edu-honors {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border: 1px solid var(--color-rule);
+  padding: var(--space-3xs) var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.edu-degree {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-xs);
+}
+
+.edu-school {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-sm);
+}
+
+.edu-coursework { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
+
+/* Contact */
+.contact-box {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  padding: var(--space-2xl);
+}
+
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-display-s);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+  margin-bottom: var(--space-md);
+}
+
+.contact-desc {
+  font-size: var(--text-base);
+  color: var(--color-neutral);
+  line-height: 1.7;
+  max-width: 58ch;
+  margin-bottom: var(--space-xl);
+}
+
+.contact-actions { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-xl); }
+
+.btn {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding: var(--space-md) var(--space-xl);
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+}
+
+.btn-primary { background: var(--color-accent); color: var(--color-paper); }
+.btn-primary:hover { background: var(--color-ink); }
+.btn-primary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.btn-primary:active { opacity: 0.9; }
+
+.btn-ghost { background: transparent; color: var(--color-ink); border: 1px solid var(--color-rule); }
+.btn-ghost:hover { border-color: var(--color-neutral); }
+.btn-ghost:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.btn-ghost:active { opacity: 0.9; }
+
+.opp-list { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-md); }
+
+.opp-list li {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+.opp-list li::before { content: '→ '; color: var(--color-accent); }
+
+/* Footer */
+.footer {
+  padding: var(--space-xl) var(--space-2xl);
+  border-top: 1px solid var(--color-rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.footer-left, .footer-right {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  letter-spacing: 0.06em;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .nav { padding: var(--space-md) var(--space-lg); }
+  .nav-links { gap: var(--space-lg); }
+  .nav-links li:nth-child(n+3) { display: none; }
+
+  .document { padding: calc(var(--space-3xl) + var(--space-xl)) var(--space-lg) var(--space-3xl); }
+
+  .exp-item { grid-template-columns: 1fr; gap: var(--space-sm); }
+  .exp-meta { display: flex; gap: var(--space-lg); align-items: baseline; flex-wrap: wrap; }
+
+  .two-col { grid-template-columns: 1fr; gap: var(--space-2xl); }
+
+  .project-item { grid-template-columns: 1fr; }
+  .project-num { display: none; }
+}
+
+@media (max-width: 480px) {
+  .skills-table, .skills-table tbody, .skills-table tr, .skills-table td { display: block; }
+  .skill-cat { width: auto; padding-bottom: var(--space-xs); }
+  .skills-table tr { padding: var(--space-md) 0; }
+  .contact-actions { flex-direction: column; }
+  .btn { text-align: center; }
+}
+</style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <div class="logo-icon">LH</div>
-                <span>Lucas Hermiz</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact" class="btn-contact">Contact</a></li>
-            </ul>
+<nav class="nav" id="top">
+  <a href="#top" class="nav-wordmark">LH</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="document">
+
+  <header class="doc-header" id="summary">
+    <p class="doc-role">Cybersecurity Graduate &amp; IT Support Professional</p>
+    <h1 class="doc-name">Lucas Hermiz</h1>
+    <div class="doc-meta">
+      <div class="doc-meta-item">
+        <span class="meta-label">Location</span>
+        <span class="meta-value">West Bloomfield, MI</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="meta-label">Email</span>
+        <span class="meta-value"><a href="mailto:lucashermiz@gmail.com">lucashermiz@gmail.com</a></span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="meta-label">Phone</span>
+        <span class="meta-value"><a href="tel:+12489215014">(248) 921-5014</a></span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="meta-label">GitHub</span>
+        <span class="meta-value"><a href="https://github.com/Lucas0x24" target="_blank" rel="noopener">Lucas0x24</a></span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="meta-label">LinkedIn</span>
+        <span class="meta-value"><a href="https://www.linkedin.com/in/lucas-hermiz/" target="_blank" rel="noopener">lucas-hermiz</a></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="doc-section">
+    <div class="section-head">
+      <span class="section-label">Summary</span>
+      <div class="section-fill"></div>
+    </div>
+    <p class="summary-body">
+      Cybersecurity graduate with hands-on experience in <strong>IT support</strong>,
+      <strong>virtualization</strong>, <strong>network troubleshooting</strong>,
+      and <strong>security-focused homelab environments</strong>. Skilled in Windows
+      and Linux administration, automation with Python and PowerShell, and managing
+      virtualized infrastructure using Proxmox.
+    </p>
+  </section>
+
+  <section class="doc-section" id="experience">
+    <div class="section-head">
+      <span class="section-label">Experience</span>
+      <div class="section-fill"></div>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="exp-company">Pro Care Unlimited</p>
+          <p class="exp-period">2022 – Present</p>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="hero-badge">CYBERSECURITY • IT SUPPORT • HOMELAB INFRASTRUCTURE</div>
-                <h1 class="hero-name">LUCAS HERMIZ</h1>
-                <p class="hero-tagline">Cybersecurity Graduate & IT Support Professional</p>
-                <div class="hero-divider"></div>
-
-                <p class="hero-description">
-                    Cybersecurity graduate with hands-on experience in <strong>IT support</strong>,
-                    <strong>virtualization</strong>, <strong>network troubleshooting</strong>,
-                    and <strong>security-focused home lab environments</strong>. Experienced with
-                    Windows and Linux systems, automation using Python and PowerShell,
-                    and managing virtualized infrastructure using Proxmox.
-                </p>
-
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-
-                    <div class="stat-item">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Systems Built</div>
-                    </div>
-
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                </div>
-
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
-                </div>
-            </div>
-
-            <div class="hero-sidebar">
-                <div class="contact-card">
-                    <h3>CONTACT INFO</h3>
-
-                    <div class="contact-item">
-                        <span class="label">Location</span>
-                        <span class="value">West Bloomfield, MI</span>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="label">Phone</span>
-                        <span class="value">(248) 921-5014</span>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="label">Email</span>
-                        <span class="value">lucashermiz@gmail.com</span>
-                    </div>
-
-                    <div class="contact-links">
-                        <a href="https://github.com/Lucas0x24" class="social-link">GitHub</a>
-                        <a href="https://www.linkedin.com/in/lucas-hermiz/" class="social-link">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h3 class="exp-role">IT Support / Billing Specialist</h3>
+          <ul class="exp-bullets">
+            <li>Designed and maintained Python-based automation pipelines for billing operations, improving workflow efficiency and reducing operational costs</li>
+            <li>Automated billing validation, reconciliation, and reporting processes to improve data accuracy and reduce manual workload</li>
+            <li>Provided technical support for internal systems, workstations, printers, and software-related issues</li>
+            <li>Assisted with workstation setup, software configuration, and troubleshooting across office environments</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Summary -->
-    <section id="summary" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-text">Professional Summary</span>
-            </h2>
-
-            <div class="summary-content">
-                <p>
-                    Skilled in <strong>Windows</strong>, <strong>Linux</strong>,
-                    <strong>PowerShell</strong>, <strong>Python</strong>,
-                    <strong>Proxmox</strong>, <strong>Wireshark</strong>,
-                    <strong>Active Directory</strong>, and virtualization technologies.
-                    Hands-on experience building custom PCs, configuring Wi-Fi and networking equipment,
-                    troubleshooting operating systems, and maintaining virtualized lab environments.
-                </p>
-            </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="exp-company">Self-Employed</p>
+          <p class="exp-period">2019 – Present</p>
         </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-text">Professional Experience</span>
-            </h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>IT Support / Billing Specialist</h3>
-                                <p class="company">Pro Care Unlimited — Southfield, MI</p>
-                            </div>
-                            <span class="duration">2022–Present</span>
-                        </div>
-
-                        <ul class="responsibilities">
-                            <li>Designed and maintained Python-based automation pipelines for billing operations, improving workflow efficiency and reducing operational costs</li>
-                            <li>Automated billing validation, reconciliation, and reporting processes to improve data accuracy and reduce manual workload</li>
-                            <li>Provided technical support for internal systems, workstations, printers, and software-related issues impacting daily operations</li>
-                            <li>Assisted with workstation setup, software configuration, and troubleshooting for employees across office environments</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Independent Contractor — IT Support & Technical Services</h3>
-                                <p class="company">Self-Employed</p>
-                            </div>
-                            <span class="duration">2019–Present</span>
-                        </div>
-
-                        <ul class="responsibilities">
-                            <li>Built, upgraded, and troubleshot custom desktop computers and Windows-based systems for clients</li>
-                            <li>Installed and configured Wi-Fi equipment, routers, and IP camera systems while resolving connectivity and network issues</li>
-                            <li>Provided technical support involving hardware diagnostics, operating system installation, software troubleshooting, and system optimization</li>
-                            <li>Assisted with peripheral setup, cable management, driver installation, and workstation configuration</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+        <div>
+          <h3 class="exp-role">Independent IT Support &amp; Technical Services</h3>
+          <ul class="exp-bullets">
+            <li>Built, upgraded, and troubleshot custom desktop computers and Windows-based systems for clients</li>
+            <li>Installed and configured Wi-Fi equipment, routers, and IP camera systems while resolving connectivity issues</li>
+            <li>Provided hardware diagnostics, OS installation, software troubleshooting, and system optimization</li>
+            <li>Assisted with peripheral setup, cable management, driver installation, and workstation configuration</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-text">Technical Skills</span>
-            </h2>
+  <section class="doc-section" id="skills">
+    <div class="section-head">
+      <span class="section-label">Technical Skills</span>
+      <div class="section-fill"></div>
+    </div>
+    <table class="skills-table">
+      <tbody>
+        <tr>
+          <td class="skill-cat">Security Tools</td>
+          <td class="skill-items">Splunk &middot; Wireshark &middot; Nmap &middot; Burp Suite &middot; Metasploit</td>
+        </tr>
+        <tr>
+          <td class="skill-cat">Systems &amp; Networking</td>
+          <td class="skill-items">Linux &middot; Windows Server &middot; Active Directory &middot; Docker &middot; VirtualBox &middot; GNS3 &middot; Proxmox &middot; Raspberry Pi</td>
+        </tr>
+        <tr>
+          <td class="skill-cat">Scripting</td>
+          <td class="skill-items">Python &middot; PowerShell</td>
+        </tr>
+        <tr>
+          <td class="skill-cat">IT Support</td>
+          <td class="skill-items">Hardware Troubleshooting &middot; PC Building &middot; Windows Support &middot; System Imaging &middot; Technical Support</td>
+        </tr>
+        <tr>
+          <td class="skill-cat">Networking</td>
+          <td class="skill-items">TCP/IP &middot; DNS &middot; Routers &middot; Wi-Fi Configuration &middot; Firewalls</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-            <div class="skills-grid">
-
-                <div class="skill-box">
-                    <div class="skill-header">
-                        <div class="skill-icon">🛡️</div>
-                        <h3>Security Tools</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span class="skill-tag">Splunk</span>
-                        <span class="skill-tag">Wireshark</span>
-                        <span class="skill-tag">Nmap</span>
-                        <span class="skill-tag">Burp Suite</span>
-                        <span class="skill-tag">Metasploit</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-header">
-                        <div class="skill-icon">💻</div>
-                        <h3>Systems / Networking</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Windows Server</span>
-                        <span class="skill-tag">Active Directory</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">VirtualBox</span>
-                        <span class="skill-tag">GNS3</span>
-                        <span class="skill-tag">Proxmox</span>
-                        <span class="skill-tag">Raspberry Pi</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-header">
-                        <div class="skill-icon">⚡</div>
-                        <h3>Scripting / Automation</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">PowerShell</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-header">
-                        <div class="skill-icon">🖥️</div>
-                        <h3>IT Support</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span class="skill-tag">Hardware Troubleshooting</span>
-                        <span class="skill-tag">PC Building</span>
-                        <span class="skill-tag">Windows Support</span>
-                        <span class="skill-tag">Networking</span>
-                        <span class="skill-tag">System Imaging</span>
-                        <span class="skill-tag">Technical Support</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-header">
-                        <div class="skill-icon">🌐</div>
-                        <h3>Networking</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span class="skill-tag">TCP/IP</span>
-                        <span class="skill-tag">DNS</span>
-                        <span class="skill-tag">Routers</span>
-                        <span class="skill-tag">Wi-Fi Configuration</span>
-                        <span class="skill-tag">Firewalls</span>
-                    </div>
-                </div>
-
-            </div>
+  <section class="doc-section" id="projects">
+    <div class="section-head">
+      <span class="section-label">Projects</span>
+      <div class="section-fill"></div>
+    </div>
+    <div class="projects-list">
+      <div class="project-item">
+        <span class="project-num">01</span>
+        <div>
+          <h3 class="project-title">Proxmox Virtualization Home Lab</h3>
+          <p class="project-body">Built and maintained a multi-system home lab using Proxmox to host Windows and Linux virtual machines for networking, system administration, cybersecurity testing, and infrastructure management.</p>
+          <div class="project-tags">
+            <span class="project-tag">Proxmox</span>
+            <span class="project-tag">Virtualization</span>
+            <span class="project-tag">Linux</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-text">Featured Projects</span>
-            </h2>
-
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-number">01</div>
-                    <h3>Proxmox Virtualization Home Lab</h3>
-                    <p>
-                        Built and maintained a multi-system home lab using Proxmox to host
-                        Windows and Linux virtual machines for networking, system administration,
-                        cybersecurity testing, and infrastructure management.
-                    </p>
-                    <div class="project-tags">
-                        <span>Proxmox</span>
-                        <span>Virtualization</span>
-                        <span>Linux</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-number">02</div>
-                    <h3>Pi-hole DNS Filtering Server</h3>
-                    <p>
-                        Configured Pi-hole on a Raspberry Pi to provide network-wide DNS filtering,
-                        ad blocking, and network monitoring within a home environment.
-                    </p>
-                    <div class="project-tags">
-                        <span>Pi-hole</span>
-                        <span>Raspberry Pi</span>
-                        <span>DNS</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-number">03</div>
-                    <h3>PowerShell Automation Scripts</h3>
-                    <p>
-                        Developed PowerShell scripts to automate workstation setup,
-                        software installation, file organization, and administrative tasks.
-                    </p>
-                    <div class="project-tags">
-                        <span>PowerShell</span>
-                        <span>Automation</span>
-                        <span>Windows</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-number">04</div>
-                    <h3>Custom PC Builds & System Deployment</h3>
-                    <p>
-                        Built and configured desktop systems including hardware installation,
-                        BIOS configuration, operating system deployment, driver installation,
-                        and hardware diagnostics.
-                    </p>
-                    <div class="project-tags">
-                        <span>Hardware</span>
-                        <span>Windows</span>
-                        <span>Deployment</span>
-                    </div>
-                </div>
-
-            </div>
+      </div>
+      <div class="project-item">
+        <span class="project-num">02</span>
+        <div>
+          <h3 class="project-title">Pi-hole DNS Filtering Server</h3>
+          <p class="project-body">Configured Pi-hole on a Raspberry Pi to provide network-wide DNS filtering, ad blocking, and network monitoring within a home environment.</p>
+          <div class="project-tags">
+            <span class="project-tag">Pi-hole</span>
+            <span class="project-tag">Raspberry Pi</span>
+            <span class="project-tag">DNS</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-text">Certifications</span>
-            </h2>
-            
-            <div class="cert-card">
-                <div class="cert-badge">In Progress</div>
-                <h3>CompTIA Security+</h3>
-                <p>Foundational cybersecurity certification</p>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-badge">2025</div>
-                <h3>Cisco Networking Basics</h3>
-                <p>Networking fundamentals and security concepts</p>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-badge">2021</div>
-                <h3>FANUC Handling Tool Operations</h3>
-                <p>Robotics and automation programming</p>
-            </div>
-
+      </div>
+      <div class="project-item">
+        <span class="project-num">03</span>
+        <div>
+          <h3 class="project-title">PowerShell Automation Scripts</h3>
+          <p class="project-body">Developed PowerShell scripts to automate workstation setup, software installation, file organization, and administrative tasks across Windows environments.</p>
+          <div class="project-tags">
+            <span class="project-tag">PowerShell</span>
+            <span class="project-tag">Automation</span>
+            <span class="project-tag">Windows</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-text">Education</span>
-            </h2>
-
-            <div class="education-card">
-                <div class="edu-header">
-                    <h3>Bachelor of Science in Cybersecurity</h3>
-                    <span class="edu-badge">HONORS GRADUATE</span>
-                </div>
-
-                <p class="edu-school">Oakland University — Rochester, MI</p>
-                <p class="edu-details">
-                    Relevant Coursework: Network Security, Ethical Hacking,
-                    Digital Forensics, Systems Administration
-                </p>
-            </div>
+      </div>
+      <div class="project-item">
+        <span class="project-num">04</span>
+        <div>
+          <h3 class="project-title">Custom PC Builds &amp; System Deployment</h3>
+          <p class="project-body">Built and configured desktop systems including hardware installation, BIOS configuration, OS deployment, driver installation, and hardware diagnostics.</p>
+          <div class="project-tags">
+            <span class="project-tag">Hardware</span>
+            <span class="project-tag">Windows</span>
+            <span class="project-tag">Deployment</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-        <div class="contact-split-container">
-
-            <div class="contact-left">
-                <h2 class="contact-heading">Let's Work Together</h2>
-
-                <p class="contact-description">
-                    Open to opportunities in IT support, cybersecurity,
-                    system administration, and infrastructure-focused roles.
-                </p>
-
-                <div class="contact-methods">
-
-                    <div class="method-item">
-                        <div class="method-details">
-                            <h4>Email</h4>
-                            <a href="mailto:lucashermiz@gmail.com">lucashermiz@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="method-item">
-                        <div class="method-details">
-                            <h4>Phone</h4>
-                            <a href="tel:+12489215014">(248) 921-5014</a>
-                        </div>
-                    </div>
-
-                    <div class="method-item">
-                        <div class="method-details">
-                            <h4>Location</h4>
-                            <p>West Bloomfield, MI</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="contact-right">
-                <div class="contact-cta-card">
-                    <h3>Available for Opportunities</h3>
-
-                    <p>Currently seeking roles in:</p>
-
-                    <ul class="opportunity-list">
-                        <li>IT Support & Help Desk</li>
-                        <li>System Administration</li>
-                        <li>Cybersecurity & SOC Roles</li>
-                        <li>Infrastructure & Networking</li>
-                    </ul>
-
-                    <div class="cta-buttons">
-                        <a href="mailto:lucashermiz@gmail.com" class="btn btn-primary btn-block">Send Email</a>
-                        <a href="https://www.linkedin.com/in/lucas-hermiz/" class="btn btn-secondary btn-block" target="_blank">Connect on LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-
+  <section class="doc-section" id="certifications">
+    <div class="section-head">
+      <span class="section-label">Certifications &amp; Education</span>
+      <div class="section-fill"></div>
+    </div>
+    <div class="two-col">
+      <div class="cert-list">
+        <div class="cert-item">
+          <span class="cert-year">In Progress</span>
+          <span class="cert-name">CompTIA Security+</span>
+          <span class="cert-desc">Foundational cybersecurity certification</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Lucas Hermiz. All Rights Reserved.</p>
-                <p class="footer-tagline">Building Secure & Reliable Infrastructure</p>
-            </div>
+        <div class="cert-item">
+          <span class="cert-year">2025</span>
+          <span class="cert-name">Cisco Networking Basics</span>
+          <span class="cert-desc">Networking fundamentals and security concepts</span>
         </div>
-    </footer>
+        <div class="cert-item">
+          <span class="cert-year">2021</span>
+          <span class="cert-name">FANUC Handling Tool Operations</span>
+          <span class="cert-desc">Robotics and automation programming</span>
+        </div>
+      </div>
+      <div>
+        <span class="edu-honors">Honors Graduate</span>
+        <h3 class="edu-degree">Bachelor of Science in Cybersecurity</h3>
+        <p class="edu-school">Oakland University — Rochester, MI</p>
+        <p class="edu-coursework">Relevant coursework: Network Security, Ethical Hacking, Digital Forensics, Systems Administration</p>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section class="doc-section" id="contact">
+    <div class="section-head">
+      <span class="section-label">Contact</span>
+      <div class="section-fill"></div>
+    </div>
+    <div class="contact-box">
+      <h2 class="contact-heading">Let's work together.</h2>
+      <p class="contact-desc">Open to opportunities in IT support, cybersecurity, system administration, and infrastructure-focused roles.</p>
+      <div class="contact-actions">
+        <a href="mailto:lucashermiz@gmail.com" class="btn btn-primary">Send an email</a>
+        <a href="https://www.linkedin.com/in/lucas-hermiz/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Lucas0x24" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <ul class="opp-list">
+        <li>IT Support &amp; Help Desk</li>
+        <li>System Administration</li>
+        <li>Cybersecurity &amp; SOC Roles</li>
+        <li>Infrastructure &amp; Networking</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span class="footer-left">Lucas Hermiz &copy; 2026</span>
+  <span class="footer-right">Building secure &amp; reliable infrastructure</span>
+</footer>
+
 </body>
 </html>
-```
-
-This version matches your updated resume much better and makes you look stronger for IT support, sysadmin, infrastructure, and entry-level cybersecurity positions.
