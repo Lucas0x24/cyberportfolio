@@ -8,11 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* Hallmark · macrostructure: Marquee Hero · tone: editorial · anchor hue: slate-blue
- * Pre-emit critique: P5 H5 E5 S5 R5 V5
- * Nav: N5 floating pill · Footer: Ft6 letter close
- */
-
 :root {
   --color-paper:    oklch(97% 0.008 245);
   --color-paper-2:  oklch(93% 0.010 245);
@@ -66,7 +61,6 @@ body {
   font-weight: 300;
 }
 
-/* ─── N5 Floating pill nav ─── */
 .nav {
   position: fixed;
   top: var(--space-md);
@@ -124,7 +118,6 @@ body {
 .nav-cta:hover { color: var(--color-ink); }
 .nav-cta:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; border-radius: 3px; }
 
-/* ─── Hero — Marquee ─── */
 .hero {
   padding: calc(var(--space-4xl) + var(--space-xl)) var(--space-2xl) var(--space-3xl);
   max-width: 1100px;
@@ -138,17 +131,9 @@ body {
   margin-bottom: var(--space-xl);
 }
 
-.hero-location {
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-}
-
+.hero-location { font-size: var(--text-sm); color: var(--color-muted); }
 .hero-divider { width: 32px; height: 1px; background: var(--color-rule); }
-
-.hero-status {
-  font-size: var(--text-sm);
-  color: var(--color-accent);
-}
+.hero-status { font-size: var(--text-sm); color: var(--color-accent); }
 
 .hero-name {
   font-family: var(--font-display);
@@ -186,7 +171,6 @@ body {
   padding-top: 0.15em;
 }
 
-/* ─── Buttons ─── */
 .btn {
   font-family: var(--font-body);
   font-size: var(--text-sm);
@@ -214,7 +198,6 @@ body {
 .btn-text:hover { color: var(--color-ink); border-bottom-color: var(--color-ink); }
 .btn-text:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
 
-/* ─── Sections ─── */
 .section {
   max-width: 1100px;
   margin: 0 auto;
@@ -243,7 +226,6 @@ body {
   margin-bottom: var(--space-2xl);
 }
 
-/* ─── Summary ─── */
 .summary-layout {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -279,7 +261,6 @@ body {
 }
 .summary-text strong { color: var(--color-ink); font-weight: 500; }
 
-/* ─── Experience ─── */
 .exp-list { display: flex; flex-direction: column; gap: 0; }
 
 .exp-item {
@@ -337,7 +318,6 @@ body {
   background: var(--color-rule);
 }
 
-/* ─── Skills ─── */
 .skills-layout {
   display: grid;
   grid-template-columns: 1.4fr 1fr 0.9fr;
@@ -356,14 +336,8 @@ body {
 }
 
 .skill-items { display: flex; flex-direction: column; gap: var(--space-xs); }
+.skill-item { font-size: var(--text-sm); color: var(--color-neutral); line-height: 1.5; }
 
-.skill-item {
-  font-size: var(--text-sm);
-  color: var(--color-neutral);
-  line-height: 1.5;
-}
-
-/* ─── Projects ─── */
 .projects-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -405,7 +379,6 @@ body {
   padding: var(--space-3xs) var(--space-sm);
 }
 
-/* ─── Certs + Education ─── */
 .creds-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -452,7 +425,6 @@ body {
 .edu-school { font-size: var(--text-sm); color: var(--color-neutral); margin-bottom: var(--space-xs); }
 .edu-coursework { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
 
-/* ─── Contact ─── */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -541,7 +513,6 @@ body {
 .btn-outline:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 .btn-outline:active { opacity: 0.88; }
 
-/* ─── Footer — Ft6 letter close ─── */
 .footer {
   max-width: 1100px;
   margin: 0 auto;
@@ -564,7 +535,6 @@ body {
 
 .footer-copy { font-size: var(--text-xs); color: var(--color-muted); letter-spacing: 0.04em; }
 
-/* ─── Responsive ─── */
 @media (max-width: 900px) {
   .skills-layout { grid-template-columns: 1fr 1fr; }
   .exp-item { grid-template-columns: 1fr; gap: var(--space-md); }
@@ -789,7 +759,14 @@ body {
           </div>
         </div>
         <div class="cert-entry">
-          <span class="cert-year">2025</span>
+          <span class="cert-year">2026</span>
+          <div>
+            <p class="cert-name">TryHackMe Pre Security</p>
+            <p class="cert-desc">Cybersecurity fundamentals — networking, the web, and cyber attack &amp; defence</p>
+          </div>
+        </div>
+        <div class="cert-entry">
+          <span class="cert-year">2026</span>
           <div>
             <p class="cert-name">Cisco Networking Basics</p>
             <p class="cert-desc">Networking fundamentals and security concepts</p>
